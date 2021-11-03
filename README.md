@@ -1,4 +1,4 @@
-# log-scanner App
+# Log Scanner Tool
 
 It's a Comand line App based on Java version 8.
 
