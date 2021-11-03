@@ -23,3 +23,5 @@ Run `./mvnw test` to execute the unit tests.
 ## Running mutation tests
 
 Run `./mvnw pitest:mutationCoverage` to execute the mutation tests.
+
+![image](https://user-images.githubusercontent.com/12549950/140185348-304a76ec-5413-4632-9adb-a6d1929d5706.png)
