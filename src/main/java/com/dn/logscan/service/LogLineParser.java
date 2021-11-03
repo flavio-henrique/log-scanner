@@ -31,20 +31,6 @@ public class LogLineParser {
     return builder.build();
   }
 
-
-
-  public static LogLine parseOnlyUID(String logLine) {
-
-    LogLine.LogLineBuilder builder = LogLine.builder();
-
-    if (isNotValidLog(logLine)) {
-      return builder.build();
-    }
-    setUID(logLine, builder);
-
-    return builder.build();
-  }
-
   public static LogLine parseOnlyThreadAndUID(String logLine) {
 
     LogLine.LogLineBuilder builder = LogLine.builder();
@@ -62,7 +48,7 @@ public class LogLineParser {
     return builder.build();
   }
 
-  public static LogLine parseOnlyStart(String logLine) {
+  public static LogLine parseOnlyStartAndUID(String logLine) {
 
     LogLine.LogLineBuilder builder = LogLine.builder();
 
@@ -72,6 +58,9 @@ public class LogLineParser {
 
     // set start
     builder.start(logLine.substring(0, 23));
+
+    // set uid
+    setUID(logLine, builder);
 
     return builder.build();
   }

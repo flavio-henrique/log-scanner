@@ -1,5 +1,8 @@
 package com.dn.logscan.service;
 
+import lombok.extern.log4j.Log4j2;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -18,6 +21,11 @@ public class FileImporter {
     URI uri = Objects.requireNonNull(url).toURI();
     Path path = Paths.get(uri);
     return Files.lines(path, StandardCharsets.UTF_8);
+  }
+
+  public Stream<String> getFile(String fileName) throws IOException {
+    File file = new File(fileName);
+    return Files.lines(file.toPath(), StandardCharsets.UTF_8);
   }
 
 }

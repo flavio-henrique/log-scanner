@@ -57,6 +57,19 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.1.10</version>
+                <configuration>
+                    <targetClasses>
+                        <param>com.dn.logscan.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.dn.logscan.*</param>
+                    </targetTests>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -82,6 +95,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-parent</artifactId>
+            <version>1.1.10</version>
+            <type>pom</type>
         </dependency>
 
     </dependencies>
